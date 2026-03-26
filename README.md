@@ -1,6 +1,6 @@
-# Doc Sense – AI Presentation Feedback
+# Living Soils – Soil Report Analysis and Community Learning
 
-Django 4.x monolith to upload PDF decks, process them asynchronously via an LLM API, and deliver feedback in a shared library. Target platform: PythonAnywhere.
+Living Soils is a Django 4.x application for uploading soil report PDFs, sending them for asynchronous analysis via an LLM API, and presenting the returned report data inside a user dashboard. The platform is designed to support both practical soil report interpretation and community learning around soil health, student feedback, and shared understanding of results. Target platform: PythonAnywhere.
 
 ## Getting Started
 
@@ -13,7 +13,15 @@ Django 4.x monolith to upload PDF decks, process them asynchronously via an LLM 
 
 ## Key Apps
 
-- `presentations`: upload handling, async processing, LLM API calls, feedback views.
+- `presentations`: upload handling, async processing, LLM API calls, and report data views.
+- `dashboard`: account pages, soil report views, soil sample tracking, student records, and community feedback workflows.
+
+## What The Platform Supports
+
+- Uploading soil report PDFs for automated analysis.
+- Displaying returned report data in the Living Soils dashboard.
+- Tracking supporting information such as soil samples and student records.
+- Encouraging community learning through feedback and shared interpretation of soil health information.
 
 ## Deployment (PythonAnywhere summary)
 
@@ -27,7 +35,8 @@ Django 4.x monolith to upload PDF decks, process them asynchronously via an LLM 
 ## Directories
 
 - `config/`: project settings, URLs, ASGI/WSGI.
-- `presentations/`: domain app with models, tasks, views, templates.
+- `presentations/`: upload, processing, retry, delete, and report data display logic.
+- `dashboard/`: logged-in dashboard experience and soil learning workflows.
 - `templates/`, `static/`, `media/`: user-facing assets and uploads.
 
 ## Tests
