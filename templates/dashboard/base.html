@@ -14,11 +14,26 @@
     </a>
 
     <nav class="dash__nav" aria-label="Dashboard navigation">
-      <a class="dash__link {% if request.resolver_match.url_name == 'my_account' %}is-active{% endif %}" href="{% url 'dashboard:my_account' %}">My Account</a>
-      <a class="dash__link {% if request.resolver_match.url_name == 'soil_reports' or request.resolver_match.url_name == 'soil_report_detail' %}is-active{% endif %}" href="{% url 'dashboard:soil_reports' %}">Soil Reports</a>
-      <a class="dash__link {% if request.resolver_match.url_name == 'student_records' %}is-active{% endif %}" href="{% url 'dashboard:student_records' %}">Student Record</a>
-      <a class="dash__link {% if request.resolver_match.url_name == 'soil_samples' %}is-active{% endif %}" href="{% url 'dashboard:soil_samples' %}">Soil Sample Tracking</a>
-      <a class="dash__link {% if request.resolver_match.url_name == 'student_feedback' %}is-active{% endif %}" href="{% url 'dashboard:student_feedback' %}">Student Feedback</a>
+      <a class="dash__link {% if request.resolver_match.url_name == 'my_account' %}is-active{% endif %}" href="{% url 'dashboard:my_account' %}">
+        <i class="dash__icon bi bi-person-circle" aria-hidden="true"></i>
+        <span>My Account</span>
+      </a>
+      <a class="dash__link {% if request.resolver_match.url_name == 'soil_reports' or request.resolver_match.url_name == 'soil_report_detail' %}is-active{% endif %}" href="{% url 'dashboard:soil_reports' %}">
+        <i class="dash__icon bi bi-file-earmark-text" aria-hidden="true"></i>
+        <span>Soil Reports</span>
+      </a>
+      <a class="dash__link {% if request.resolver_match.url_name == 'student_records' %}is-active{% endif %}" href="{% url 'dashboard:student_records' %}">
+        <i class="dash__icon bi bi-people" aria-hidden="true"></i>
+        <span>Student Record</span>
+      </a>
+      <a class="dash__link {% if request.resolver_match.url_name == 'soil_samples' %}is-active{% endif %}" href="{% url 'dashboard:soil_samples' %}">
+        <i class="dash__icon bi bi-clipboard-data" aria-hidden="true"></i>
+        <span>Soil Sample Tracking</span>
+      </a>
+      <a class="dash__link {% if request.resolver_match.url_name == 'student_feedback' %}is-active{% endif %}" href="{% url 'dashboard:student_feedback' %}">
+        <i class="dash__icon bi bi-chat-left-text" aria-hidden="true"></i>
+        <span>Student Feedback</span>
+      </a>
     </nav>
 
     <div class="dash__footer">
