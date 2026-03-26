@@ -114,12 +114,29 @@
 {% if not user.is_authenticated %}
 <script>
   (function () {
+    function setAuthTitle(tab) {
+      var titleEl = document.getElementById('authModalLabel');
+      if (!titleEl) return;
+      titleEl.textContent = (tab === 'signup') ? 'Hello new user' : 'Welcome back';
+    }
+
     function setActiveAuthTab(tab) {
       var targetId = (tab === 'signup') ? '#auth-signup-tab' : '#auth-login-tab';
       var tabEl = document.querySelector(targetId);
+      setAuthTitle(tab);
       if (!tabEl) return;
       bootstrap.Tab.getOrCreateInstance(tabEl).show();
     }
+
+    document.addEventListener('shown.bs.tab', function (e) {
+      var tabEl = e.target;
+      if (!tabEl || !tabEl.id) return;
+      if (tabEl.id === 'auth-signup-tab') {
+        setAuthTitle('signup');
+      } else if (tabEl.id === 'auth-login-tab') {
+        setAuthTitle('login');
+      }
+    });
 
     document.addEventListener('click', function (e) {
       var el = e.target.closest('[data-auth-tab]');
